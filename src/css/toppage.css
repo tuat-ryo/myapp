@@ -1,0 +1,93 @@
+.circle-wrap{
+    position:absolute;
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    perspective: 1500px;
+    z-index:10;
+}
+
+.circle-1,
+.circle-2,
+.circle-3,
+.circle-4,
+.circle-5{
+  position: absolute;
+  color: #fff;
+  padding: 5%;
+  width: 25vw;
+  height: 25vh;
+  mix-blend-mode: multiply;
+  text-align: center;
+  font-size: 200%;
+  box-shadow: 10px 10px 10px rgba(0,0,0,0.4);
+  transition: all .5s ease-out;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 200;
+  animation: fade_in_pointer 0.001s linear 31.5s forwards;
+}
+
+.circle-1:hover ,
+.circle-2:hover ,
+.circle-3:hover ,
+.circle-4:hover ,
+.circle-5:hover{
+    -webkit-transform: scale(1.2) ;
+    -moz-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+}
+
+.circle-1,
+.circle-2
+{
+    margin-top: 15%;
+}
+.circle-3,
+.circle-4,
+.circle-5{
+    margin-top: 35%;
+}
+
+.circle-1 {
+  background: #f66;
+  margin-left: 20%;
+  border-radius: 50% 50% 50% 70%/50% 50% 70% 60%;
+}
+.circle-2 {
+  background: #f92;
+  margin-left:55%;
+  border-radius: 80% 30% 50% 50%/50%;
+}
+.circle-3 {
+  background: #fc2;
+  margin-left:10%;
+  border-radius: 40% 40% 50% 40%/30% 50% 50% 50%;
+}
+
+.circle-4 {
+  background: #fc2;
+  margin-left: 65%;
+  border-radius: 40% 40% 50% 40%/30% 50% 50% 50%;
+}
+
+.circle-5 {
+  background: #fc2;
+  margin-left: 60%;
+  border-radius: 40% 40% 50% 40%/30% 50% 50% 50%;
+}
+@keyframes zoom {
+  0% {
+      transform: scale(0.0)
+  }
+  100% {
+      transform: scale(1.0)
+  }
+}
+
+@keyframes fade_in_pointer {
+  0%   { opacity: 0; }
+  100% { opacity: 1; pointer-events: auto;}
+}

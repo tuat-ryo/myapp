@@ -1,0 +1,186 @@
+.bomb{
+  position: absolute;
+  top: 70%;
+  left: 50%;
+
+  display: block;
+  width: 12.8vh;
+  height: 12.8vh;
+  border-radius: 100%;
+  z-index: 40;
+  transform: translate(-50%,-50%) rotate(5deg);
+}
+
+.bomb:before{
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  display: block;
+  width: 12.8vh;
+  height: 12.8vh;
+  border-radius: 100%;
+
+  background-color: currentColor;
+  box-shadow: 0 0 0.2vh 0.2vh black inset;
+
+  transform: translate(-50%,-50%);
+
+  z-index: 1;
+}
+
+.bomb:after{
+  content: "";
+  position: absolute;
+  top: 15%;
+  left: 8%;
+
+  width: 50%;
+  height: 50%;
+  border-radius: 45%;
+  border: 1vh solid transparent;
+  border-left: 1vh dotted white;
+
+  transform: rotate(30deg);
+  box-sizing: border-box;
+  z-index: 2;
+}
+
+/* 出っ張り */
+.bomb .ledge{
+  position: absolute;
+  left: 50%;
+
+  display: inline-block;
+  width: 30%;
+  height: 20%;
+  border-radius: 15% 15% 100% 100%;
+  background-color: currentColor;
+
+  transform: translate(-50%,-25%);
+
+  z-index: 2;
+}
+
+/* 導火線 */
+.bomb .fuse{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  display: block;
+  width: 99%;
+  height: 99%;
+  border: 0.6vh solid transparent;
+  border-top-color: #D0BAA5;
+  border-right-color: #D0BAA5;
+  border-radius: 100%;
+
+  box-sizing: border-box;
+  transform: translate(-15%,-75%) rotate(-20deg);
+
+  z-index: -1;
+}
+
+.bomb .fuse:before,
+.bomb .fuse:after{
+  content: "＊";
+  position: absolute;
+  right: -.55em;
+  bottom: 0;
+
+  display: inline-block;
+  font-size: 1.5em;
+}
+
+.bomb .fuse:before{
+  color: red;
+  transform: translate(-50%,0) rotate(0);
+
+}
+
+.bomb .fuse:after{
+  color: orange;
+  transform: translate(-50%,0) rotate(30deg);
+}
+
+.bomb .dust{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%,-50%);
+}
+
+
+
+.black{
+  color: black;
+}
+
+
+
+.bomb{animation:bomb_jump 0.6s ease-in-out 6.55s forwards;}
+
+.bomb .fuse{ animation:
+    fuse_anim 3s 7.75s linear,
+    after_exp 1s 10.75s steps(1,start) forwards;
+}
+
+.bomb .fuse:before{ animation: burning 3s linear; }
+.bomb .fuse:after { animation: burning 3s linear reverse;}
+
+
+@keyframes bomb_jump {
+    50%{
+        left: 15%;
+        top:25%;
+    }
+
+    100%{
+        left: 50%;
+        top:15%;
+    }
+}
+
+@keyframes fuse_anim{
+  49%{
+    border-top-color: #D0BAA5;
+  }
+
+  50%{
+    border-top-color: transparent;
+  }
+
+  100%{
+    border-top-color: transparent;
+    transform: translate(-15%,-75%) rotate(-200deg);
+  }
+}
+
+@keyframes burning{
+  to{
+    transform: translate(-50%,0) rotate(360deg);
+  }
+}
+
+
+/* 爆発後 */
+@keyframes after_exp{
+  to{
+    opacity: 0;
+  }
+}
+
+@keyframes message{
+  from{
+    opacity: 1;
+  }
+
+  to{
+    font-size: 4.5em;
+  }
+}

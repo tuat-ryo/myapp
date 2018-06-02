@@ -1,0 +1,69 @@
+.svgfield{
+    position: absolute;
+    width: 70vh;
+    top:0%;
+    left:0;
+    right:0;
+    margin: auto;/*自動中央寄せ*/
+    z-index: 300;
+    opacity: 0;
+    animation: uptitle 0.001s linear 30.999s forwards;
+}
+
+.path{
+    stroke:#000;
+    fill:none;
+    stroke-width:1;
+    stroke-dasharray: 3000;
+    stroke-dashoffset:3000;
+    -moz-animation:DASH 2s ease-in-out 31s forwards;/*-0-や-webkit-はベンダープレフィックス（ブラウザに対応するためのもの）*/
+    -webkit-animation:DASH 2s ease-in-out 31s forwards;
+    -o-animation:DASH 2s ease-in-out 31s forwards;
+    animation:DASH 2s ease-in-out 31s forwards;
+    -webkit-transition:all .3s ease-in-out;transition:all 31.0s ease-in-out;
+}
+/*@keyframeは、アニメーション開始から終了するまでどのようなアニメーションするのか指定する*/
+/*@keyframe 任意の名前{
+    ○○%{
+        {cssプロパティ:値}
+        }
+    }
+*/
+@keyframes uptitle{
+    0% {opacity: 0;}
+    1% {opacity:1;}
+    100% {opacity:1;}
+
+
+}
+
+
+@keyframes DASH{
+    0%  {stroke-dashoffset:3000;fill:none;}/*0%はアニメーション開始時*/
+    80% {stroke-dashoffset:2000;fill:none;}
+    100%{stroke-dashoffset:0;fill:#000;}/*100%はアニメーション終了時*/
+}
+
+@-moz-keyframes DASH{
+    0%  {stroke-dashoffset:3000;fill:none;}
+    80% {stroke-dashoffset:2000;fill:none;}
+    100%{stroke-dashoffset:0;fill:#000;}
+}
+
+@-webkit-keyframes DASH{
+    0%  {stroke-dashoffset:3000;fill:none;}
+    80% {stroke-dashoffset:2000;fill:none;}
+    100%{stroke-dashoffset:0;fill:#000;}
+}
+
+@-o-keyframes DASH{
+    0%  {stroke-dashoffset:3000;fill:none;}
+    80% {stroke-dashoffset:2000;fill:none;}
+    100%{stroke-dashoffset:0;fill:#000;}
+}
+
+@-ms-keyframes DASH{
+    0%  {stroke-dashoffset:3000;fill:none;}
+    80% {stroke-dashoffset:2000;fill:none;}
+    100%{stroke-dashoffset:0;fill:#000;}
+}

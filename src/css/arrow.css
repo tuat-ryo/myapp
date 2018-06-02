@@ -1,0 +1,187 @@
+.arrow__move{
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+}
+
+@keyframes draw-line {
+  0%   { transform: translateX(-100%); opacity: 1;}
+  100% { transform: translateX(100%); opacity: 1;}
+}
+
+@keyframes draw-line2 {
+  0%   { transform: translateX(100%); }
+  100% { transform: translateX(200%); }
+}
+
+.to_right_arrow {
+    position:absolute;
+    width: 200%;
+    right: 100%;
+    top: 0%;
+    bottom: 0%;
+    height: 8vw;
+    opacity: 0;
+    margin: auto;
+    background-color: #5bc0de;
+    transform: translateX(100%);
+    animation: draw-line 2.0s ease-in-out 12.8s  forwards,draw-line2 1.0s ease-in-out 17.3s  forwards;
+}
+
+.to_right_arrow:after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 0;
+  border: 8vw solid transparent;
+  border-left: 10vw solid #5bc0de;
+
+  left: 100%;
+  top: -50%;
+}
+
+
+.to_down_arrow {
+    position:absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    opacity: 0;
+    width: 30vw ;
+    transform: scaleX(.5) translateY(-400%);
+    animation: move_to_down 1s linear 13.3s forwards,move_to_down2 1.0s ease-in-out 17.3s forwards;
+}
+
+.to_down_arrow:before {
+  content: "";
+  display: block;
+  margin: 0 auto;
+  width: 15vw ;
+  height: 200vw ;
+  background: #666;
+}
+
+.to_down_arrow::after{
+  content: "";
+  display:block;
+  border-top: 15vw  solid #666;
+  border-left: 15vw  solid transparent;
+  border-right: 15vw  solid transparent;
+  transform-origin: left top;
+
+}
+
+@keyframes move_to_down {
+    0%{opacity: 1;transform: scaleX(.5) translateY(-400%);}
+    100%{transform: scaleX(.5) translateY(0%);opacity: 1;}
+}
+
+@keyframes move_to_down2 {
+    0%{transform: scaleX(.5) translateY(50%);opacity: 1;}
+    100%{transform: scaleX(.5) translateY(100%);opacity: 1;}
+
+}
+
+.to_right_arrow:nth-of-type(1){top: 20px;}
+.to_right_arrow:nth-of-type(2){top: 40px;}
+
+.word-1 p:nth-child(1)  { animation:fadeout 0.7s linear 0.7s backwards; }
+.word-1 p:nth-child(2)  { animation:fadeout 0.7s linear 2.1s backwards; }
+.word-1 p:nth-child(3)  { animation:fadeout 0.7s linear 3.5s backwards; }
+
+
+
+/*** 共通: word-1, word-2 ***/
+.word-1{
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    margin: auto;
+    width: calc(100% - 40px); height: calc(100% - 40px);
+}
+
+.word-1 p {
+
+  position: absolute;
+  left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    margin: auto;
+
+  font-size: 80px;
+  color: #777;
+  text-align: center;
+  line-height: 99vw;
+  opacity:0;
+
+}
+
+.cracker{
+  position:absolute;
+  left: 10%;
+  top:50%;
+  width: 200px;
+  height: 200px;
+  background: repeating-linear-gradient(0deg, #444, #444 10px, #888 0, #888 20px);
+  clip-path: polygon(0px 0px,200px 0px,100px 200px);/*clip-pathを使えば切り抜きができる、時計回り方向に座標設定*/
+  transform: rotate(45deg);
+}
+
+
+
+#stage #box{
+	background:#ff0;
+	position:absolute;
+	width:100%;
+	height:100%;
+	overflow:hidden;
+    opacity: 0;
+    animation:fadeout 1s linear 6s backwards;
+}
+
+#stage .base{
+	position:absolute;
+	top:0;
+	width:50%;
+	height:100%;
+	background:#000;
+	opacity:0.3;
+}
+
+/*---------------------------------
+left door
+---------------------------------*/
+#door1{
+		left:0;
+		animation:slide 0.6s ease 6s forwards;
+}
+/*---------------------------------
+right door
+---------------------------------*/
+#door2{
+		right:0;
+        animation:slide 0.6s ease 6s forwards;
+
+}
+
+@keyframes slide {
+    0%   { width: 50%; }
+    100% { width: 0%; }
+}
+
+
+@keyframes fillto {
+    0% { background-color: rgb(0,0,0);}
+    100% { background-color: #00cc22;}
+    }
+
+@keyframes fadeout {
+  0%   { opacity: 0; }
+  1%   { opacity: 1; }
+  100% { opacity: 1; }
+}

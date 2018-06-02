@@ -1,0 +1,28 @@
+@font-face {
+            font-family: "hacka_text";
+            src: url("./font/GN-Koharuiro_Sunray.eot"); /* IE9 */
+            src: url("./font/GN-Koharuiro_Sunray.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+            url("./font/GN-Koharuiro_Sunray.woff") format("woff"), /* chrome, firefox */
+            url("./font/GN-Koharuiro_Sunray.ttf") format("truetype"), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+            url("./font/GN-Koharuiro_Sunray.svg#GN-Koharuiro_Sunray") format("svg"); /* iOS 4.1- */
+            font-style: normal;
+            font-weight: normal;
+        }
+@font-face {
+            font-family: "ranobe";
+            src: url("./font/ranobe.eot"); /* IE9 */
+            src: url("./font/ranobe.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+            url("./font/ranobe.woff") format("woff"), /* chrome, firefox */
+            url("./font/ranobe.ttf") format("truetype"), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+            url("./font/ranobe.svg#ranobe") format("svg"); /* iOS 4.1- */
+            font-style: normal;
+            font-weight: normal;
+        }
+
+
+
+
+.articles {
+    font-family:'ranobe';
+    font-size:50px;
+}

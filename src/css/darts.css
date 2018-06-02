@@ -1,0 +1,226 @@
+
+/*各3D空間に配置する要素の親要素*/
+.throw__stage {
+position: absolute;
+ width: 100%; height: 100%;
+ overflow: hidden;
+
+ perspective: 100px;/*視点の基準位置*/
+ }/*transform-styleは、親要素の傾きに対して、子要素は3D空間の位置を保持するかを指定できます*/
+/*.stage__filterはbox-shadowで内側に影をつけて、回想シーンのような雰囲気を表現*/
+
+.throw__parts{
+    position:absolute;
+    display: flex;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    opacity: 0;
+    width: 25vh; height: 25vh;
+    font-size: 0vh;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Asap', sans-serif;;
+}
+
+@keyframes font_up {
+    from{font-size: 0vh;}
+    to{font-size: 8vh;}
+
+}
+.throw__parts:nth-child(1){background-color: #ffa3d1;animation: gyro 0.8s linear 27.1s forwards,font_up 0.5s ease-in-out 32.5s forwards;}
+.throw__parts:nth-child(2){background-color: #a3d1ff;animation:  fujinami 0.8s linear 27.9s forwards,font_up 0.5s ease-in-out 32.5s forwards;}
+.throw__parts:nth-child(3){background-color: #a3ffa3;animation: curve 0.8s linear 28.8s forwards,font_up 0.5s ease-in-out 32.5s forwards;}
+.throw__parts:nth-child(4){background-color: #ffd1a3;animation: sinker 0.8s linear 29.7s forwards,font_up 0.5s ease-in-out 32.5s forwards;}
+
+
+
+.kanban{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 80%;
+    height: 80%;
+    opacity: 0;
+    transform-origin:top;
+    animation: feed-in 0.001s linear 21.1s forwards,purapura 1.5s ease 21.3s alternate-reverse 2;
+}
+
+.kanban:before{
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 1vh;
+  background: #79bd8f;
+  transition: 2s;
+  animation: bobo 0.6s linear 21.0s forwards,feed-in 0.001s linear 24.3s reverse forwards;
+}
+
+.kanban::after{
+position: absolute;
+top: 0;
+right: 0;
+content: '';
+width: 0vh;
+height: 0vh;
+border: 0vh solid #333;
+border-top-color: transparent;
+border-right-color: transparent;
+animation: turn_page 1s ease-in-out 24.3s forwards;
+overflow: hidden;
+border-radius:1vh;
+}
+
+.waving{
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width:50vh;
+    height:50vh;
+    margin:auto;
+    opacity: 0;
+    animation:feed-in 0.001s linear 24.6s forwards, waving_arm 0.5s linear alternate-reverse infinite,up-doll 1s linear 25.3s forwards,spin 1.0s linear 26.3s forwards;
+
+}
+@keyframes spin {
+	0% {transform:translate(0%,-70%) scale(0.5) rotateY(0deg);
+        opacity: 1;
+
+    }
+	100% {transform: translate(0%,-70%) scale(0.5) rotateY(130deg);
+        opacity: 0;
+    }
+}
+
+.poster{
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    left: 0;
+    background-image: url(./image/hackadoll.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    animation: fig 0.65s linear 21.0s forwards,fig 0.45s ease-in-out 24.41s reverse forwards;
+}
+@keyframes fig {
+    0%{width: 0%;}
+    100%{width: 100%;}
+
+}
+
+
+.icon_field{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 50vw;
+    height: 50vh;
+    opacity: 0;
+    animation: feed-in 0.001s linear 24.6s forwards;
+
+
+
+}
+
+#icon_position{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+margin: auto ;
+
+}
+
+
+
+i:nth-of-type(1){  --angle: 60deg;  }
+i:nth-of-type(2){  --angle: 120deg;  }
+i:nth-of-type(3){  --angle: -60deg;  }
+i:nth-of-type(4){  --angle: -120deg;  }
+
+
+i{ animation: icon_move 3s linear 24.1s forwards; }
+
+@keyframes icon_move{
+  from{
+    transform: translate(0%,0%) rotate(var(--angle)) translateY(10vh);
+  }
+
+  to{
+    transform: translate(0%,0%) rotate(var(--angle)) translateY(-150vh) scale(2.0);
+  }
+}
+
+@keyframes waving_arm {
+    0%{content: url(./image/wave_hacka1.png);}
+    25%{content: url(./image/wave_hacka2.png);}
+    50%{content: url(./image/wave_hacka3.png);}
+    75%{content: url(./image/wave_hacka4.png);}
+    100%{content: url(./image/wave_hacka5.png);}
+}
+
+@keyframes  up-doll{
+    from{transform: translate(0%,0%);}
+    to{transform: translate(0%,-70%) scale(0.5);}
+
+}
+
+@keyframes bobo {
+
+    100%{width: 100%;}
+}
+
+@keyframes purapura {
+    0%{transform: rotateX(0.8deg);box-shadow: 0px 0px 0px rgba(0,0,0,0);}
+    70%{transform: rotateX(-0.2deg);box-shadow: 0px 7px 7px rgba(0,0,0,0.28);}
+    100%{transform: rotateX(0deg);box-shadow: 0px 10px 10px rgba(0,0,0,0.4);}
+
+}
+
+
+/***********************************************************************************************
+  keyframes
+************************************************************************************************/
+@keyframes sinker {
+  0% {opacity: 1;transform: translateZ(100px) translateX(0%) translateY(0%) scale(calc(1/(100/(100 - 60))));}
+  50%   {opacity: 1; transform: translateZ(80px) translateX(0%) translateY(0%) scale(calc(1/(100/(100 - 60))));}
+  90%   {opacity: 1; transform: translateZ(50px) translateX(70%) translateY(40%) scale(calc(1/(100/(100 - 60)))); border-radius:50%;width: 25vh;}
+  100%   {opacity: 1; transform: translateZ(50px) translateX(55%) translateY(40%) scale(calc(1/(100/(100 - 50))));width: 25vw; border-radius: 50% 50% 50% 70%/50% 50% 70% 60%;pointer-events: auto;}
+}
+
+@keyframes curve {
+  0% {opacity: 1; transform: translateZ(100px) translateX(0%) translateY(0%) scale(calc(1/(100/(100 - 60))));}
+  50%   {opacity: 1; transform: translateZ(80px) translateX(0%) translateY(0%) scale(calc(1/(100/(100 - 60))));}
+  90%   {opacity: 1; transform: translateZ(50px) translateX(-70%) translateY(40%) scale(calc(1/(100/(100 - 60)))); border-radius:50%;width: 25vh;}
+  100%   {opacity: 1; transform: translateZ(50px) translateX(-55%) translateY(40%) scale(calc(1/(100/(100 - 50)))); width: 25vw; border-radius: 50% 50% 50% 70%/50% 50% 70% 60%;pointer-events: auto;}
+}
+
+@keyframes fujinami {
+  0% { opacity: 1;transform: translateZ(100px) translateX(0%) translateY(0%) scale(calc(1/(100/(100 - 60))));}
+  50%   {opacity: 1; transform: translateZ(80px) translateX(0%) translateY(0%) scale(calc(1/(100/(100 - 60))));}
+  90%   {opacity: 1; transform: translateZ(50px) translateX(50%) translateY(-20%) scale(calc(1/(100/(100 - 60)))); border-radius:50%;width: 25vh;}
+  100%   {opacity: 1; transform: translateZ(50px) translateX(35%) translateY(-20%) scale(calc(1/(100/(100 - 50)))); width: 25vw; border-radius: 50% 50% 50% 70%/50% 50% 70% 60%;pointer-events: auto;}
+}
+
+@keyframes gyro {
+  0% {opacity: 1; transform: translateZ(100px) translateX(0%) translateY(0%) scale(calc(1/(100/(100 - 60))));}
+  50%   {opacity: 1; transform: translateZ(80px) translateX(0%) translateY(0%) scale(calc(1/(100/(100 - 60))));}
+  90%   {opacity: 1; transform: translateZ(50px) translateX(-50%) translateY(-20%) scale(calc(1/(100/(100 - 60)))); border-radius:50%;width: 25vh;}
+  100%   {opacity: 1; transform: translateZ(50px) translateX(-35%) translateY(-20%) scale(calc(1/(100/(100 - 50)))); width: 25vw; border-radius: 50% 50% 50% 70%/50% 50% 70% 60%;pointer-events: auto;}
+}
