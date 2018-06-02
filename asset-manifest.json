@@ -1,7 +1,20 @@
 {
-  "main.css": "static/css/main.f1778c2a.css",
-  "main.css.map": "static/css/main.f1778c2a.css.map",
-  "main.js": "static/js/main.c356b0e2.js",
-  "main.js.map": "static/js/main.c356b0e2.js.map",
-  "static/media/logo.svg": "static/media/logo.5d5d9eef.svg"
+  "main.css": "static/css/main.f06af799.css",
+  "main.css.map": "static/css/main.f06af799.css.map",
+  "main.js": "static/js/main.a7424f6a.js",
+  "main.js.map": "static/js/main.a7424f6a.js.map",
+  "static/media/hacka_1.png": "static/media/hacka_1.4657ad1e.png",
+  "static/media/hacka_2.png": "static/media/hacka_2.1bd59786.png",
+  "static/media/hacka_3.png": "static/media/hacka_3.284b0c08.png",
+  "static/media/hacka_4.png": "static/media/hacka_4.3554e4dd.png",
+  "static/media/hackadoll.png": "static/media/hackadoll.cf8d206d.png",
+  "static/media/logo.svg": "static/media/logo.5d5d9eef.svg",
+  "static/media/mini_hacka_1.png": "static/media/mini_hacka_1.9f51e8b0.png",
+  "static/media/mini_hacka_3.png": "static/media/mini_hacka_3.d24ba824.png",
+  "static/media/mini_hacka_4.png": "static/media/mini_hacka_4.efe37e82.png",
+  "static/media/wave_hacka1.png": "static/media/wave_hacka1.f22bd621.png",
+  "static/media/wave_hacka2.png": "static/media/wave_hacka2.93760316.png",
+  "static/media/wave_hacka3.png": "static/media/wave_hacka3.b0cccd8c.png",
+  "static/media/wave_hacka4.png": "static/media/wave_hacka4.a0ae2362.png",
+  "static/media/wave_hacka5.png": "static/media/wave_hacka5.5beedf87.png"
 }
