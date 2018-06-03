@@ -19,7 +19,9 @@ class App extends Component {
         <Router>
           <div style={{position:'absolute',width: '100vw',height:'100vh'}}>
             <Route exact path='/myapp' component={Toppage} />
-
+            <Route exact path='/myapp/works' component={Works} />
+            <Route exact path='/myapp/posts' render={props => <Posts fil='/blog.json' lin = '/posts/'  {...props} />} />
+            <Route exact path='/myapp/posts/:id' render={props => <Post text='/post-sources/' {...props} />} />
           </div>
        </Router>
     );
