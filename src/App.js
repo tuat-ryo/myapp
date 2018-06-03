@@ -17,7 +17,10 @@ class App extends Component {
   render() {
     return (
         <Router>
-          <Toppage/>
+          <div style={{position:'absolute',width: '100vw',height:'100vh'}}>
+            <Route exact path='/' component={Toppage} />
+            
+          </div>
        </Router>
     );
   }
