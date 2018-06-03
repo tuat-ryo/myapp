@@ -18,8 +18,8 @@ class App extends Component {
     return (
         <Router>
           <div style={{position:'absolute',width: '100vw',height:'100vh'}}>
-            <Route exact path='/' component={Toppage} />
-            
+            <Route exact path='/myapp' component={Toppage} />
+
           </div>
        </Router>
     );
